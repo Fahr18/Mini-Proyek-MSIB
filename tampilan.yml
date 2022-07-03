@@ -1,0 +1,11 @@
+---
+- hosts: webserver
+  remote_user: web
+  vars:
+    variablel: 'Pengerjaan Proyek Akhir'
+  task:
+    - name: Copy teks ini ke Server
+      template:
+        src: index.j2
+        dest: /var/www/html/index.html
+      become: yes
